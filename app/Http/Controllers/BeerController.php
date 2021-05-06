@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BeerController extends Controller
 {
@@ -14,7 +15,13 @@ class BeerController extends Controller
      */
     public function index()
     {
-        //
+        $beers = DB::table('beers')->get();
+
+        // $beers = Beer::all();
+        
+        return view('beers', [
+            'beers' => $beers
+        ]);
     }
 
     /**
@@ -44,9 +51,14 @@ class BeerController extends Controller
      * @param  \App\Models\Beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function show(Beer $beer)
+    public function show($id)
     {
         //
+        $beer = Beer::all()->find($id);
+        
+        return view('beerPage', [
+            'beer' => $beer
+        ]);
     }
 
     /**

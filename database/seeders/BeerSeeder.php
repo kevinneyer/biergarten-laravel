@@ -14,7 +14,7 @@ class BeerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('beers')->insert([
+        $beers = [[
             'name' => 'Budweiser' ,
             'brewery' => 'AB Inbev',
             'img_url' => 'https://delpapadistributing.com/wp-content/uploads/2018/09/budweiser_pair_02.png',
@@ -77,6 +77,10 @@ class BeerSeeder extends Seeder
             'tasting_notes' => 'Bitter Citrus Pine', 
             'likes' => 7,
             'recommended_drinking' => 'Remarkably drinkable and well suited for adventures everywhere.'
-        ]);
+        ]];
+
+        foreach( $beers as $beer ) {
+            DB::table('beers')->insert($beer);
+        }
     }
 }
