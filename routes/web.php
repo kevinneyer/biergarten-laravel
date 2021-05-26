@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/add', function () {
+    return view('addbeer');
+});
+
 Route::resource('beers', BeerController::class);

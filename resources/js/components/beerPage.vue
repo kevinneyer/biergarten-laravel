@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'beerPage',
+    name: 'beerpage',
     props: ['beer']
 }
 </script>

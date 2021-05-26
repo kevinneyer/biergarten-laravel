@@ -1,20 +1,24 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import beerPage from './js/components/beerPage'
+import BeerPage from './js/components/beerpage'
+import AddBeer from './js/components/addbeer'
 
 Vue.use(Router);
 
-const BeerRoutes = {
-    path: '/beers/:id/',
-    name: 'BeerPage',
-    components: {
-        default: beerPage
+const BeerRoutes = [
+    {
+    path: '/beers/:id',
+    name: 'beerpage',
+    component: { BeerPage }
+    },
+    {
+    path: '/add',
+    name: 'addbeer',
+    component: { AddBeer }
     }
-}
+]
 
 export default new Router({
-    routes: [
-        BeerRoutes
-    ],
+    routes: BeerRoutes,
     mode: 'history',
 });

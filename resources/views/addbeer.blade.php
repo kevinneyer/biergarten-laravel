@@ -1,5 +1,5 @@
 @extends('welcome')
 
 @section('content')
-    <beerpage :beer='{{ $beer }}'></beerpage>
+    <addbeer></addbeer>
 @endsection

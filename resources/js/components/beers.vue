@@ -10,12 +10,15 @@
                     <h4>{{ beer.name }}</h4>
                     <h5>{{ beer.brewery}}</h5>
                     <p>{{ beer.style }} - {{ beer.abv }}%</p>        
-                    <router-link :to="{ name: 'BeerPage', params: { id: beer.id } }"> 
+                    <router-link :to="{ name: 'beerpage', params: { id: beer.id } }"> 
                         <button>More Info</button>
                     </router-link>
                 </div>
             </div>
         </div>
+        <router-link :to="{ name: 'addbeer' }"> 
+            <button>Add Beer</button>
+        </router-link>
     </div>
 </template>
 
